@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.5)
 set(IRRLICHT_ROOT_PATH D:/SDK/irrlicht-1.8.4)
 
 # Set the project name
-project(ex1)
+project(ex2)
 
 # Set Irrlicht include path
 include_directories(${IRRLICHT_ROOT_PATH}/include)
@@ -13,7 +13,7 @@ include_directories(${IRRLICHT_ROOT_PATH}/include)
 link_directories(${IRRLICHT_ROOT_PATH}/lib/x64)
 
 # Add an executable
-add_executable(ex1 main.cpp)
+add_executable(ex2 main.cpp)
 
 # Link library
-target_link_libraries(ex1 Irrlicht)
+target_link_libraries(ex2 Irrlicht)
