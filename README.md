@@ -6,6 +6,8 @@ some irrlicht demos.
 
 ``` bash
 
+mkdir build
+
 cd build
 
 cmake [path to demo]
