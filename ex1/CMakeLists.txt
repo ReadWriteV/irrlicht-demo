@@ -1,19 +1,19 @@
 cmake_minimum_required(VERSION 3.5)
 
-# Set Irrlicht root path
-set(IRRLICHT_ROOT_PATH D:/SDK/irrlicht-1.8.4)
-
 # Set the project name
 project(ex1)
 
-# Set Irrlicht include path
-include_directories(${IRRLICHT_ROOT_PATH}/include)
+# Set Irrlicht_DIR and CMAKE_MODULE_PATH to find irrlicht
+set(Irrlicht_DIR D:/SDK/irrlicht-1.8.4)
+set(CMAKE_MODULE_PATH D:/SDK/irrlicht-1.8.4/cmake)
 
-# Set Irrlicht library path
-link_directories(${IRRLICHT_ROOT_PATH}/lib/x64)
+# find IRRLICHT
+find_package(Irrlicht QUIET REQUIRED)
 
-# Add an executable
-add_executable(ex1 main.cpp)
-
-# Link library
-target_link_libraries(ex1 Irrlicht)
+if(Irrlicht_FOUND)
+    add_executable(ex1 main.cpp)
+    include_directories(${Irrlicht_INCLUDE_DIR})
+    target_link_libraries(ex1 ${Irrlicht_LIBRARY})
+else(Irrlicht_FOUND)
+    message(FATAL_ERROR "Irrlicht library not found")
+endif(Irrlicht_FOUND)
