@@ -2,7 +2,7 @@
 
 some irrlicht demos.
 
-# Usage
+# Build
 
 ``` bash
 
@@ -10,7 +10,7 @@ mkdir build
 
 cd build
 
-cmake [path to demo]
+cmake [path/to/demo]
 
 nmake
 ```
