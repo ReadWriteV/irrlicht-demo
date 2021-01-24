@@ -12,5 +12,5 @@ cd build
 
 cmake [path/to/demo]
 
-nmake
+cmake --build .
 ```

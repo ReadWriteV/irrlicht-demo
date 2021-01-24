@@ -1,19 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
 
-# Set irrKlang root path
-set(IRRKLANG_ROOT_PATH D:/SDK/irrKlang-1.6.0)
-
-# Set the project name
 project(ex8)
 
-# Set Irrlicht include path
-include_directories(${IRRKLANG_ROOT_PATH}/include)
+find_package(IrrKlang REQUIRED CONFIG)
 
-# Set Irrlicht library path
-link_directories(${IRRKLANG_ROOT_PATH}/lib/x64)
+include_directories(${IrrKlang_INCLUDE_DIR})
 
-# Add an executable
-add_executable(ex8 main.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
 
-# Link library
-target_link_libraries(ex8 irrKlang)
+target_link_libraries(${PROJECT_NAME} ${IrrKlang_LIBRARY})

@@ -1,19 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
 
-# Set Irrlicht root path
-set(IRRLICHT_ROOT_PATH D:/SDK/irrlicht-1.8.4)
-
-# Set the project name
 project(ex5)
 
-# Set Irrlicht include path
-include_directories(${IRRLICHT_ROOT_PATH}/include)
+find_package(Irrlicht REQUIRED CONFIG)
 
-# Set Irrlicht library path
-link_directories(${IRRLICHT_ROOT_PATH}/lib/x64)
+include_directories(${Irrlicht_INCLUDE_DIR})
 
-# Add an executable
-add_executable(ex5 main.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
 
-# Link library
-target_link_libraries(ex5 Irrlicht)
+target_link_libraries(${PROJECT_NAME} ${Irrlicht_LIBRARY})
